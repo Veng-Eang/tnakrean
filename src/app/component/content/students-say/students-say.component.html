@@ -1,0 +1,21 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let student of studentsSay">
+    <ng-template carouselSlide [id]="student.name">
+      <div class="item">
+        <div class="fcrse_4 mb-20">
+          <div class="say_content">
+            <p>"{{student.comment}}"</p>
+          </div>
+          <div class="st_group">
+            <div class="stud_img">
+              <img [src]="student.imageUrl" [alt]="student.name">
+            </div>
+            <h4>{{student.name}}</h4>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
+
+

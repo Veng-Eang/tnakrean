@@ -1,0 +1,15 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let instructor of instructors">
+    <ng-template carouselSlide [id]="instructor.id">
+      <div class="item">
+        <div class="stream_1">
+          <a href="live_output.html" class="stream_bg">
+            <img [src]="instructor.imageUrl" [alt]="instructor.name">
+            <h4>{{instructor.name}}</h4>
+            <p>live<span></span></p>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>

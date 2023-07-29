@@ -1,0 +1,21 @@
+/* Customize Youtube Player Start */
+.vbox-child {
+    position: relative!important;
+}
+.video-player-area {
+    position: relative;
+}
+.vbox-child::after,  .video-player-area::after {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    content: "";
+}
+/* Customize Youtube Player End */
+
+
+

@@ -1,0 +1,33 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let instructor of instructors">
+    <ng-template carouselSlide [id]="instructor.id">
+      <div class="item">
+        <div class="fcrse_1 mb-20">
+          <div class="tutor_img">
+            <a href="instructor_profile_view.html"><img [src]="instructor.imageUrl" [alt]="instructor.name"></a>
+          </div>
+          <div class="tutor_content_dt">
+            <div class="tutor150">
+              <a href="instructor_profile_view.html" class="tutor_name">{{instructor.name}}</a>
+              <div class="mef78" title="Verify">
+                <i class="uil uil-check-circle"></i>
+              </div>
+            </div>
+            <div class="tutor_cate">{{instructor.subject}}</div>
+            <ul class="tutor_social_links">
+              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#" class="ln"><i class="fab fa-linkedin-in"></i></a></li>
+              <li><a href="#" class="yu"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+            <div class="tut1250">
+              <span class="vdt15">{{instructor.student}} Students</span>
+              <span class="vdt15">{{instructor.courseCount}} Courses</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
+
