@@ -8,11 +8,11 @@
             <div class="course-overlay">
               <div class="badge_seller">{{course.badgeSeller}}</div>
               <div class="crse_reviews">
-                <i class='uil uil-star'></i>{{course.rate}}
+                <i class='uil uil-star'></i>{{course.reviewCount}}
               </div>
               <span class="play_btn1"><i class="uil uil-play"></i></span>
               <div class="crse_timer">
-                {{course.time}} hours
+                50 hours
               </div>
             </div>
           </a>
@@ -27,11 +27,11 @@
                </div>
             </div>
             <div class="vdtodt">
-              <span class="vdt14">{{course.viewCounter}}k views</span>
-              <span class="vdt14">{{course.createAt}} days ago</span>
+              <span class="vdt14">{{course.viewCount}} views</span>
+              <span class="vdt14">{{(course.createdTime)}}</span>
             </div>
-            <a [routerLink]="['/course/1/details']" class="crse14s">{{course.title}}</a>
-            <a href="#" class="crse-cate">Web Development | Python</a>
+            <a [routerLink]="['/course',course.id,'details']" class="crse14s">{{course.title}}</a>
+            <a href="#" class="crse-cate">{{course.category.name}}</a>
             <div class="auth1lnkprce">
               <p class="cr1fot">By <a href="#">John Doe</a></p>
               <div class="prce142">{{course.price | currency : 'USD'}}</div>

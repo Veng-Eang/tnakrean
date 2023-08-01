@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule} from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {HttpClientModule} from '@angular/common/http';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -20,6 +21,11 @@ import { LiveStreamComponent } from './component/content/live-stream/live-stream
 import { RightContentComponent } from './component/content/right-content/right-content.component';
 import { CourseDetialComponent } from './component/course-detial/course-detial.component';
 import { CourseVideoComponent } from './component/course-video/course-video.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { MyProfileComponent } from './component/my-profile/my-profile.component';
+import { TestComponent } from './component/test/test.component';
+import { CourseService } from './services/course.service';
+import { CourseCurriculumComponent } from './component/content/course-curriculum/course-curriculum.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +42,10 @@ import { CourseVideoComponent } from './component/course-video/course-video.comp
     RightContentComponent,
     CourseDetialComponent,
     CourseVideoComponent,
+    ProfileComponent,
+    MyProfileComponent,
+    TestComponent,
+    CourseCurriculumComponent,
 
   ],
   imports: [
@@ -45,8 +55,9 @@ import { CourseVideoComponent } from './component/course-video/course-video.comp
     FontAwesomeModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

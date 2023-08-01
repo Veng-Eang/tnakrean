@@ -684,8 +684,8 @@ i.icon1 {
 /*--- Index Homepage ---*/
 
 .wrapper {
-	padding: 90px 0 0;
-    transition: all 0.3s ease-out;
+	padding: 0 0 0;
+  transition: all 0.3s ease-out;
 }
 
 .clearfix:after {
@@ -4130,7 +4130,7 @@ a.rmv-btn i {
 }
 
 .ui.label.lb12 {
-    background-color: #dedfe !important;
+    background-color: #dedfe0 !important;
     padding: .9999em 1.2em !important;
     color: #686f7a !important;
     border-top-left-radius: 3px !important;
@@ -4944,7 +4944,6 @@ a.rmv-btn i {
     color: #686f7a;
     line-height: 26px;
     padding-top: 27px;
-}
 }
 
 .story125 {
@@ -5993,7 +5992,7 @@ a.rmv-btn i {
 	background: #34a853 !important;
 }
 
-./* --- Forgot Password Page --- */
+/* --- Forgot Password Page --- */
 
 .main-tabs {
     width: 100%;

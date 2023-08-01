@@ -1,5 +1,6 @@
+import { CourseService } from 'src/app/services/course.service';
 import {SlidesOutputData, OwlOptions } from 'ngx-owl-carousel-o';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/common/course';
 
 @Component({
@@ -7,24 +8,31 @@ import { Course } from 'src/app/common/course';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
-export class CourseComponent {
+export class CourseComponent implements OnInit {
+  courses:Course[] = []
+  constructor(private courseService : CourseService){}
   activeSlides?: SlidesOutputData;
+  day:number=0;
+  toDate=new Date('yyyy-MM-dd');
+
+  ngOnInit(): void {
+      this.courseService.getAllCourse().subscribe(
+        data=>{
+          this.courses=data;
+        }
+      )
+  }
+  
+
+
   getPassedData(data: SlidesOutputData) {
     this.activeSlides = data;
     console.log(this.activeSlides);
   }
 
 
-  courses:Course[] = [
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-    new Course("1","The Complete Front-End Web Development Course!","../../../../assets/images/courses/img-1.jpg",10,3.5,"best seller",110,"01/12/2022",10),
-  ]
+
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
