@@ -20,6 +20,12 @@ export class CourseService {
       map(res=>res.content)
     );
   }
+  getCoursesByCategoryPagination(categoryId:number,
+                                  pageNumber:number,
+                                  pageSize:number):Observable<GetResponse>{
+    const searchCoursesByCategoryUrl=`${this.url}?category=${categoryId}&page=${pageNumber}&size=${pageSize}`
+    return this.http.get<GetResponse>(searchCoursesByCategoryUrl);
+  }
 }
 interface GetResponse{
   content:Course[],

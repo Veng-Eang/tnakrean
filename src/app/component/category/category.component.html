@@ -1,0 +1,63 @@
+  <div class="crse_content">
+    <h3>My courses ({{length}})</h3>
+    <div class="_14d25">
+      <div class="row">
+        <div class="col-xs-2 col-lg-4 col-md-5" *ngFor="let course of courses">
+          <div class="fcrse_1 mt-20">
+            <a href="course_detail_view.html" class="fcrse_img">
+              <img [src]="course.imageUrl" [alt]="course.title">
+              <div class="course-overlay">
+                <div class="badge_seller">{{course.badgeSeller}}</div>
+                <div class="crse_reviews">
+                  <i class="uil uil-star"></i>{{course.averageRating}}
+                </div>
+                <span class="play_btn1"><i class="uil uil-play"></i></span>
+                <div class="crse_timer">
+                  00 hours
+                </div>
+              </div>
+            </a>
+            <div class="fcrse_content">
+              <div class="eps_dots more_dropdown">
+                <a href="#"><i class="uil uil-ellipsis-v"></i></a>
+                <div class="dropdown-content">
+                  <span><i class="uil uil-share-alt"></i>Share</span>
+                  <span><i class="uil uil-clock-three"></i>Save</span>
+                  <span><i class="uil uil-ban"></i>Not Interested</span>
+                  <span><i class="uil uil-windsock"></i>Report</span>
+                </div>
+              </div>
+              <div class="vdtodt">
+                <span class="vdt14">{{course.viewCount}} views</span>
+                <span class="vdt14">15 days ago</span>
+              </div>
+              <a href="course_detail_view.html" class="crse14s">{{course.title}</a>
+              <a href="#" class="crse-cate">{{course.category.name</a>
+              <div class="auth1lnkprce">
+                <p class="cr1fot">By <a href="#">John Doe</a></p>
+                <div class="prce142">$10</div>
+                <button class="shrt-cart-btn" title="cart"><i class="uil uil-shopping-cart-alt"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-ml-12">
+      <div class="main-loader mt-20">
+          <mat-paginator #paginator
+                          class="demo-paginator"
+                          (page)="handlePageEvent($event)"
+                          [length]="length"
+                          [pageSize]="pageSize"
+                          [disabled]="disabled"
+                          [showFirstLastButtons]="showFirstLastButtons"
+                          [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+                          [hidePageSize]="hidePageSize"
+                          [pageIndex]="pageIndex"
+                          aria-label="Select page">
+          </mat-paginator>
+      </div>
+    </div>
+  </div>
+

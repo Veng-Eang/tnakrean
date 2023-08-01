@@ -26,6 +26,10 @@ import { MyProfileComponent } from './component/my-profile/my-profile.component'
 import { TestComponent } from './component/test/test.component';
 import { CourseService } from './services/course.service';
 import { CourseCurriculumComponent } from './component/content/course-curriculum/course-curriculum.component';
+import { CategoryService } from './services/category.service';
+import { CategoryComponent } from './component/category/category.component';
+import { ExploreComponent } from './component/explore/explore.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,8 @@ import { CourseCurriculumComponent } from './component/content/course-curriculum
     MyProfileComponent,
     TestComponent,
     CourseCurriculumComponent,
+    CategoryComponent,
+    ExploreComponent,
 
   ],
   imports: [
@@ -55,9 +61,10 @@ import { CourseCurriculumComponent } from './component/content/course-curriculum
     FontAwesomeModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
-  providers: [CourseService],
+  providers: [CourseService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
